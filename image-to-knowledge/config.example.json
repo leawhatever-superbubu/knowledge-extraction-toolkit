@@ -5,8 +5,8 @@
     "view_id": "YOUR_VIEW_ID"
   },
   "vision": {
-    "model": "gemini-2.5-flash",
-    "base_url": "YOUR_LLM_BASE_URL",
+    "model": "gemini-2.0-flash-exp",
+    "base_url": "https://generativelanguage.googleapis.com/v1beta",
     "temperature": 0.3,
     "max_tokens_per_request": 16384,
     "max_image_dimension": 2048,
@@ -14,8 +14,8 @@
     "supported_formats": ["jpg", "jpeg", "png", "webp", "gif"]
   },
   "extraction": {
-    "target_audience": "中小客商家（SMB）",
-    "source_context": "微信小店商家使用小店广告（腾讯广告-小店版）",
+    "target_audience": "通用学习者",
+    "source_context": "OpenClaw 学习资料（图片/截图/PDF）",
     "mode": "image_case",
     "max_knowledge_per_image": 8,
     "min_knowledge_per_batch": 3,
@@ -29,8 +29,8 @@
     ]
   },
   "ai": {
-    "model": "gemini-2.5-flash",
-    "base_url": "YOUR_LLM_BASE_URL",
+    "model": "gemini-2.0-flash-exp",
+    "base_url": "https://generativelanguage.googleapis.com/v1beta",
     "temperature": 0.3,
     "max_tokens_per_request": 16384
   },

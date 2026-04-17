@@ -12,7 +12,7 @@
     "folder_token": "YOUR_FOLDER_TOKEN"
   },
   "extraction": {
-    "target_audience": "中小客商家（SMB）",
+    "target_audience": "通用学习者",
     "max_knowledge_per_chapter": 10,
     "min_knowledge_per_doc": 5,
     "knowledge_types": [
