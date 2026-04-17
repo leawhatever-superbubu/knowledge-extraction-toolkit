@@ -6,7 +6,7 @@
 
 这是一套完整的知识库构建工具，能够将课程内容（视频、音频、图片、PDF）自动拆解成独立的、可检索的知识点。
 
-**实际案例参考：** [《把 40 节课变成 700 个知识点：我是怎么用 AI 做知识库的》](你的文章链接)
+**实际案例参考：** [《把 40 节课变成 700 个知识点：我是怎么用 AI 做知识库的》](https://mp.weixin.qq.com/s/oGPJj5wCX8TeLXN-Bro81g)
 
 ## 工具列表
 
@@ -17,7 +17,7 @@
 - 输出：本地 JSON、飞书多维表格、腾讯文档
 - AI 模型：OpenAI / Gemini / Claude
 
-**[查看详细说明 →](./doc-to-knowledge/README_PUBLIC.md)**
+**[查看详细说明 →](./doc-to-knowledge/README.md)**
 
 ### 2. image-to-knowledge
 从图片和 PDF 文件自动提取结构化知识点
@@ -26,7 +26,7 @@
 - 输出：本地 Markdown / JSON、飞书多维表格
 - AI 模型：Gemini Vision / GPT-4 Vision
 
-**[查看详细说明 →](./image-to-knowledge/README_PUBLIC.md)**
+**[查看详细说明 →](./image-to-knowledge/README.md)**
 
 ## 快速开始
 
@@ -98,4 +98,4 @@ OpenClaw Studio
 
 ---
 
-**相关文章：** [《把 40 节课变成 700 个知识点：我是怎么用 AI 做知识库的》](你的文章链接)
+**相关文章：** [《把 40 节课变成 700 个知识点：我是怎么用 AI 做知识库的》](https://mp.weixin.qq.com/s/oGPJj5wCX8TeLXN-Bro81g)
