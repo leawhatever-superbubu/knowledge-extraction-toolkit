@@ -1,0 +1,61 @@
+{
+  "feishu": {
+    "app_token": "YOUR_FEISHU_APP_TOKEN",
+    "table_id": "YOUR_TABLE_ID",
+    "view_id": "YOUR_VIEW_ID"
+  },
+  "vision": {
+    "model": "gemini-2.5-flash",
+    "base_url": "YOUR_LLM_BASE_URL",
+    "temperature": 0.3,
+    "max_tokens_per_request": 16384,
+    "max_image_dimension": 2048,
+    "max_image_size_bytes": 4194304,
+    "supported_formats": ["jpg", "jpeg", "png", "webp", "gif"]
+  },
+  "extraction": {
+    "target_audience": "中小客商家（SMB）",
+    "source_context": "微信小店商家使用小店广告（腾讯广告-小店版）",
+    "mode": "image_case",
+    "max_knowledge_per_image": 8,
+    "min_knowledge_per_batch": 3,
+    "knowledge_types": [
+      "concept",
+      "how_to",
+      "pitfall",
+      "data_insight",
+      "trend",
+      "tool_tip"
+    ]
+  },
+  "ai": {
+    "model": "gemini-2.5-flash",
+    "base_url": "YOUR_LLM_BASE_URL",
+    "temperature": 0.3,
+    "max_tokens_per_request": 16384
+  },
+  "field_map": {
+    "id": "知识点ID",
+    "source_doc": "来源文档",
+    "source_chapter": "来源章节",
+    "title": "知识点标题",
+    "type": "知识点类型",
+    "content": "核心内容",
+    "key_points": "关键要点",
+    "applicable_scenario": "适用场景",
+    "pain_tags": "痛点标签",
+    "difficulty": "难度等级",
+    "original_excerpt": "原文摘录",
+    "status": "处理状态",
+    "social_copy_status": "社交文案状态"
+  },
+  "pipeline": {
+    "default_output_format": "markdown",
+    "also_export_json": true,
+    "json_output_dir": "./output"
+  },
+  "pdf": {
+    "dpi": 200,
+    "max_pages": 50
+  }
+}
