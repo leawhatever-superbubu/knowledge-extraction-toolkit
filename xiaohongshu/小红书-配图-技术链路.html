@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小红书配图 - 技术链路</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f5f5f5;
+    font-family: "PingFang SC", -apple-system, sans-serif;
+    padding: 20px;
+  }
+  .canvas {
+    width: 1080px;
+    height: 1080px;
+    background: #F8FAFB;
+    position: relative;
+    padding: 80px 60px;
+  }
+  /* 标题 */
+  .title {
+    font-size: 48px;
+    font-weight: 900;
+    color: #1A2332;
+    margin-bottom: 20px;
+    letter-spacing: 0.02em;
+  }
+  .title-highlight {
+    color: #3A8DA8;
+  }
+  .subtitle {
+    font-size: 20px;
+    color: #5A6470;
+    margin-bottom: 60px;
+    letter-spacing: 0.05em;
+  }
+  /* 流程步骤 */
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+  }
+  .step-number {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    background: #3A8DA8;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 900;
+  }
+  .step-content {
+    flex: 1;
+    padding-top: 8px;
+  }
+  .step-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1A2332;
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
+  }
+  .step-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .step-item {
+    font-size: 20px;
+    color: #5A6470;
+    padding-left: 24px;
+    position: relative;
+    line-height: 1.6;
+  }
+  .step-item::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #3A8DA8;
+    font-weight: 700;
+  }
+  /* 连接箭头 */
+  .arrow {
+    width: 80px;
+    text-align: center;
+    font-size: 48px;
+    color: #3A8DA8;
+    font-weight: 300;
+    margin: 20px 0;
+  }
+  /* 底部标注 */
+  .footer {
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    right: 60px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(58,141,168,0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-logo {
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid #3A8DA8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    color: #3A8DA8;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+  }
+  .brand-text {
+    font-size: 14px;
+    color: #5A6470;
+    letter-spacing: 0.1em;
+  }
+  .footer-tag {
+    font-size: 16px;
+    color: #8B96A5;
+    letter-spacing: 0.05em;
+  }
+  /* 下载按钮 */
+  .download-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    padding: 16px 32px;
+    background: #3A8DA8;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    z-index: 1000;
+  }
+  .download-btn:hover {
+    background: #4A9DB8;
+  }
+</style>
+</head>
+<body>
+  <div class="canvas" id="canvas">
+    <div class="title">
+      技术链路：<span class="title-highlight">3 步搞定</span>
+    </div>
+    <div class="subtitle">从多模态内容到结构化知识点</div>
+    
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <div class="step-title">多模态 → 文本</div>
+          <div class="step-items">
+            <div class="step-item">视频/音频 → Whisper API（~200 元）</div>
+            <div class="step-item">PPT → Python 提取文字</div>
+            <div class="step-item">输出：40 个 Markdown 文件</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="arrow">↓</div>
+      
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <div class="step-title">预设框架 + AI 拆解</div>
+          <div class="step-items">
+            <div class="step-item">先定框架模板（不让 AI 瞎拆）</div>
+            <div class="step-item">AI 按模板提取知识点</div>
+            <div class="step-item">输出：900+ 个结构化知识点</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="arrow">↓</div>
+      
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <div class="step-title">人工审核 + 调整</div>
+          <div class="step-items">
+            <div class="step-item">合并过碎的点、拆分过大的点</div>
+            <div class="step-item">补充关联关系、统一标签</div>
+            <div class="step-item">最终：700 个可检索知识点</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <div class="footer-brand">
+        <div class="brand-logo">CT<br>RD</div>
+        <span class="brand-text">草台研究部</span>
+      </div>
+      <span class="footer-tag">AI 驱动的知识库构建</span>
+    </div>
+  </div>
+  
+  <button class="download-btn" onclick="downloadImage()">下载配图</button>
+  
+  <script>
+    async function downloadImage() {
+      const canvas = document.getElementById('canvas');
+      const scale = 2;
+      
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js';
+      document.head.appendChild(script);
+      
+      script.onload = async () => {
+        const renderedCanvas = await html2canvas(canvas, {
+          scale: scale,
+          backgroundColor: '#F8FAFB',
+          logging: false,
+          width: 1080,
+          height: 1080
+        });
+        
+        const link = document.createElement('a');
+        link.download = '小红书配图-技术链路.png';
+        link.href = renderedCanvas.toDataURL('image/png');
+        link.click();
+      };
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小红书配图 - 效果数据</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f5f5f5;
+    font-family: "PingFang SC", -apple-system, sans-serif;
+    padding: 20px;
+  }
+  .canvas {
+    width: 1080px;
+    height: 1080px;
+    background: #F8FAFB;
+    position: relative;
+    padding: 80px 60px;
+  }
+  /* 标题 */
+  .title {
+    font-size: 48px;
+    font-weight: 900;
+    color: #1A2332;
+    margin-bottom: 20px;
+    letter-spacing: 0.02em;
+  }
+  .title-highlight {
+    color: #3A8DA8;
+  }
+  .subtitle {
+    font-size: 20px;
+    color: #5A6470;
+    margin-bottom: 60px;
+    letter-spacing: 0.05em;
+  }
+  /* 对比卡片 */
+  .comparison {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-bottom: 60px;
+  }
+  .compare-card {
+    background: #fff;
+    border: 2px solid rgba(58,141,168,0.2);
+    padding: 40px;
+    text-align: center;
+  }
+  .compare-label {
+    font-size: 20px;
+    color: #5A6470;
+    margin-bottom: 24px;
+    letter-spacing: 0.1em;
+  }
+  .compare-value {
+    font-size: 56px;
+    font-weight: 900;
+    color: #1A2332;
+    margin-bottom: 16px;
+  }
+  .compare-card.highlight .compare-value {
+    color: #3A8DA8;
+  }
+  .compare-desc {
+    font-size: 16px;
+    color: #8B96A5;
+    line-height: 1.6;
+  }
+  /* 数据指标 */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .metric-card {
+    background: rgba(58,141,168,0.08);
+    border: 1px solid rgba(58,141,168,0.2);
+    padding: 32px;
+    text-align: center;
+  }
+  .metric-number {
+    font-size: 48px;
+    font-weight: 900;
+    color: #3A8DA8;
+    margin-bottom: 8px;
+  }
+  .metric-label {
+    font-size: 18px;
+    color: #5A6470;
+    letter-spacing: 0.05em;
+  }
+  /* 底部 */
+  .footer {
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    right: 60px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(58,141,168,0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-logo {
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid #3A8DA8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    color: #3A8DA8;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+  }
+  .brand-text {
+    font-size: 14px;
+    color: #5A6470;
+    letter-spacing: 0.1em;
+  }
+  .footer-tag {
+    font-size: 16px;
+    color: #8B96A5;
+    letter-spacing: 0.05em;
+  }
+  /* 下载按钮 */
+  .download-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    padding: 16px 32px;
+    background: #3A8DA8;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    z-index: 1000;
+  }
+  .download-btn:hover {
+    background: #4A9DB8;
+  }
+</style>
+</head>
+<body>
+  <div class="canvas" id="canvas">
+    <div class="title">
+      实际效果：<span class="title-highlight">数据说话</span>
+    </div>
+    <div class="subtitle">AI 辅助 vs 纯人工拆解</div>
+    
+    <div class="comparison">
+      <div class="compare-card">
+        <div class="compare-label">纯人工拆解</div>
+        <div class="compare-value">100h+</div>
+        <div class="compare-desc">逐个整理知识点<br>效率低、容易遗漏</div>
+      </div>
+      <div class="compare-card highlight">
+        <div class="compare-label">AI 辅助</div>
+        <div class="compare-value">20h</div>
+        <div class="compare-desc">框架驱动、AI 提取<br>人工审核调优</div>
+      </div>
+    </div>
+    
+    <div class="metrics">
+      <div class="metric-card">
+        <div class="metric-number">700+</div>
+        <div class="metric-label">知识点数量</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number">5×</div>
+        <div class="metric-label">效率提升</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number">3s</div>
+        <div class="metric-label">精准检索</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number">~700元</div>
+        <div class="metric-label">总成本</div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <div class="footer-brand">
+        <div class="brand-logo">CT<br>RD</div>
+        <span class="brand-text">草台研究部</span>
+      </div>
+      <span class="footer-tag">从"翻几十小时" → 3 秒定位</span>
+    </div>
+  </div>
+  
+  <button class="download-btn" onclick="downloadImage()">下载配图</button>
+  
+  <script>
+    async function downloadImage() {
+      const canvas = document.getElementById('canvas');
+      const scale = 2;
+      
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js';
+      document.head.appendChild(script);
+      
+      script.onload = async () => {
+        const renderedCanvas = await html2canvas(canvas, {
+          scale: scale,
+          backgroundColor: '#F8FAFB',
+          logging: false,
+          width: 1080,
+          height: 1080
+        });
+        
+        const link = document.createElement('a');
+        link.download = '小红书配图-效果数据.png';
+        link.href = renderedCanvas.toDataURL('image/png');
+        link.click();
+      };
+    }
+  </script>
+</body>
+</html>
