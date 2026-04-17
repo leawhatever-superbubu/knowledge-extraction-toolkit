@@ -1,13 +1,13 @@
 ---
 name: doc-to-knowledge
-description: Reads Feishu docx transcripts (from video courses), extracts structured knowledge points via AI (Gemini/OpenAI) targeting SMB merchants, and writes them into Feishu Bitable for human review. Pipeline Stage 2.
+description: Reads Feishu docx transcripts (from video courses), extracts structured knowledge points via AI (Gemini/OpenAI) targeting 用户 merchants, and writes them into Feishu Bitable for human review. Pipeline Stage 2.
 version: 1.0.0
 author: OpenClaw Studio
 ---
 
 ## Overview
 
-Pipeline 第 2 阶段：读取飞书 docx 文档（视频课程转录稿），以**中小客 (SMB)** 视角，用 AI 从中拆解出独立、可发布的知识点，将结构化结果写入飞书多维表格，供人工审核后流入下游。
+Pipeline 第 2 阶段：读取飞书 docx 文档（视频课程转录稿），以**OpenClaw 用户** 视角，用 AI 从中拆解出独立、可发布的知识点，将结构化结果写入飞书多维表格，供人工审核后流入下游。
 
 ```
 video-to-feishu-doc  →  [本 Skill]  →  knowledge-to-social-copy  →  xhs-card-maker
@@ -89,9 +89,9 @@ python3 scripts/pipeline.py --local-md path/to/playbook/
 
 AI 知识点提取核心。包含：
 - `KnowledgeItem` dataclass（知识点数据结构）
-- System Prompt（中小客视角内容策略师人设）
+- System Prompt（OpenClaw 用户视角内容策略师人设）
 - 逐章提取 + 全局后处理的两阶段 Prompt 策略
-- Playbook 模式（SMB 操作级卡片提取）
+- Playbook 模式（用户 操作级卡片提取）
 - JSON 解析容错和自动修复逻辑
 
 ### `scripts/bitable_writer.py`
